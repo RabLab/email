@@ -29,8 +29,11 @@ The get_template () method has 4 parameters that can be passed:
     $receiver = null; //The name of the receiver mailbox. (optional)
     $subject = null; //Subject of the message. This endorses the subject entered orginalmente to register a template.
     
+    // Full method call:
+    Template::get_template($slug, $email, $receiver, $subject);
+    
+    
     // Short method call:
     Template::get_template('my-template-test');
-    
     // The default recipient it the previous registered in the Email Configuration
 ```
