@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: Email Templates
+form: @/plugins/rablab/email/models/template/fields.yaml
+modelClass: RabLab\Email\Models\Template
+defaultRedirect: rablab/email/templates
+
+create:
+    redirect: rablab/email/templates/update/:id
+    redirectClose: rablab/email/templates
+
+update:
+    redirect: rablab/email/templates
+    redirectClose: rablab/email/templates

@@ -1,0 +1,36 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: @/plugins/rablab/email/models/template/columns.yaml
+
+# Model Class name
+modelClass: RabLab\Email\Models\Template
+
+# List Title
+title: Manage Email Templates
+
+# Link URL for each record
+recordUrl: rablab/email/templates/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 5
+
+# Display checkboxes next to each record
+# showCheckboxes: yes
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
+
+
+

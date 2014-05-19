@@ -1,0 +1,14 @@
+{
+    "name": "rablab/email",
+    "description": "Provides a sample contact templates plugin.",
+    "authors": [
+        {
+            "name": "Fabricio Preira Rabelo",
+            "email": "contacto@fabriciorabelo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    }
+}

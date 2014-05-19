@@ -1,0 +1,75 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+  title:
+    label: Title
+    span: left
+    placeholder: New email template
+
+  slug:
+    label: slug
+    span: right
+    placeholder: new-email-template-slug
+    attributes:
+      data-input-preset: 'input[name="Template[title]"]'
+      data-input-preset-type: slug
+      data-input-preset-closest-parent: form
+
+  toolbar:
+    type: partial
+    path: template_toolbar
+    cssClass: collapse-visible
+
+# tabs:
+#   fields:
+
+#     excerpt:
+#       tab: Details
+#       label: Excerpt
+#       type: textarea
+#       size: small
+
+secondaryTabs:
+  stretch: true
+  fields:
+    content:
+      tab: Edit
+      stretch: true
+      type: codeeditor
+      span: left
+      cssClass: no-padding
+      options:
+        language: markdown
+        showGutter: false
+        wrapWords: true
+        fontSize: 13
+        margin: 15
+        
+    preview:
+      type: RabLab\Email\FormWidgets\Preview
+      tab: Edit
+      stretch: true
+      span: right
+      cssClass: no-padding
+
+    lang:
+       tab: Manage
+       label: Language
+       type: dropdown
+       options:
+           en: English
+           br: Portuguese (Brazilian)
+       span: left
+       size: small
+       
+    subject:
+       tab: Manage
+       label: Subject
+       type: text
+       span: right
+       size: small
+       placeholder: Type a subject for this email template here
+      
