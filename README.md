@@ -23,8 +23,9 @@ This plugin adds a class to send emails in frontend using customizable emails' t
 
 The get_template () method has 4 parameters that can be passed:
 
+```php
     $ slug = slug to previously registered template in the database. (required)
     $ mail = Mailbox to receive the e-mail sent. (optional)
     $ receiver = The name of the receiver mailbox. (optional)
     $ subject = Subject of the message. This endorses the subject entered orginalmente to register a template.
-
+```
