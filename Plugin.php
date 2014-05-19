@@ -2,15 +2,16 @@
 
 use Backend;
 use Illuminate\Support\Facades\Lang;
-use \System\Classes\PluginBase;
+use System\Classes\PluginBase;
 use RabLab\Email\Classes\TagProcessor;
+use RabLab\Email\Models\Template;
 
 class Plugin extends PluginBase
 {
     public function pluginDetails()
     {
         return [
-            'name' => 'Email Templates',
+            'name' => 'Templates',
             'description' => 'Provides email templates to use in frontend.',
             'author' => 'Fabricio Pereira Rabelo',
             'icon' => 'icon-envelope'
@@ -81,5 +82,13 @@ class Plugin extends PluginBase
                 </span>', 
             $input);
         });
+    }
+}
+
+class Send
+{
+    public static function template($slug, $to = NULL, $receiver  = NULL, $subject = NULL)
+    {
+	return Template::use_template($slug, $to, $receiver, $subject);
     }
 }

@@ -2,3 +2,5 @@
     - First version
     - create_tables.php
     - seed_all_database.php
+1.0.2: 
+    - Added class Send

@@ -52,7 +52,7 @@ class Template extends Model
     public function beforeSave()
     {
         $this->filename = 'view-' . $this->slug . '.htm';
-        $this->content = strip_tags($this->content);
+        $this->content = strip_tags(preg_replace("/{{\s*message\s*}}/i", "{{ content }}", $this->content));
         $this->content_html = self::formatHtml($this->content);
     }
     
@@ -112,8 +112,8 @@ class Template extends Model
             if($file)
             {
                 //Send an email to
-                $result = Mail::send('rablab.email::email.view-' . $template_slug, $posts, function($message) use ($posts){
-                    $message->to(self::$email, self::$receiver );           
+                $result = Mail::send('rablab.email::email.view-' . $template_slug, $posts, function($atmMessage) use ($posts){
+                    $atmMessage->to(self::$email, self::$receiver );           
                 });
 
                 Files::delete_view($data);                
@@ -122,8 +122,8 @@ class Template extends Model
         else
         {
             //Send an email to
-            $result = Mail::send('rablab.email::email.view-' . $template_slug, $posts, function($message) use ($posts){
-                $message->to(self::$email, self::$receiver );           
+            $result = Mail::send('rablab.email::email.view-' . $template_slug, $posts, function($atmMessage) use ($posts){
+                $atmMessage->to(self::$email, self::$receiver );           
             });
         }
         
