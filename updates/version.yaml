@@ -4,3 +4,5 @@
     - seed_all_database.php
 1.0.2: 
     - Added class Send
+1.0.3: Fixed some issues
+    - Added variables {{ ip_address }} and {{ user_agent }} to be used in the templates to see sender information.

@@ -7,6 +7,7 @@ use System\Models\EmailSettings;
 use Illuminate\Support\Facades\DB;
 use RabLab\Email\Models\Files;
 use Illuminate\Support\Facades\Mail;
+use Symfony\Component\HttpFoundation\Request;
 
 class Template extends Model
 {
@@ -89,7 +90,13 @@ class Template extends Model
             $posts['content'] = $posts['message'];
             unset($posts['message']);
         }
-        
+	
+	$request = Request::createFromGlobals();
+	
+	// Set some request variables
+	$posts['ip_address'] = $request->getClientIp();
+	$posts['user_agent'] = $request->headers->get('User-Agent');
+	        
         self::$email = !is_null($to) ? $to : EmailSettings::get('sender_email');
         self::$receiver  = !is_null($receiver ) ? $receiver  : EmailSettings::get('sender_name');
         self::$subject_mail = !is_null($subject) ? $subject : $template[0]->subject;

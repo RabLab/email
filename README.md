@@ -21,7 +21,7 @@ This plugin adds a class to send emails in frontend using customizable emails' t
     }
 ```
 
-The template() method has 4 parameters that can be passed:
+The template () method has 4 parameters that can be passed:
 
 ```php
     $slug = 'my-template-test'; //slug to previously registered template in the database. (required)
@@ -35,4 +35,6 @@ The template() method has 4 parameters that can be passed:
     // Short method call:
     Send::template($slug);
     // The default recipient it the previous registered in the Email Configuration
+
+    Note:: Added variables {{ ip_address }} and {{ user_agent }} to be used in the templates to see sender information.
 ```
