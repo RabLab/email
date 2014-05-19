@@ -2,7 +2,7 @@
 
 return [
     'app' => [
-        'name' => 'Email Templates',
+        'name' => 'Templates',
         'templates' => 'Templates',
     ]
 ];

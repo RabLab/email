@@ -102,7 +102,8 @@ class Template extends Model
             $data += array(
                 'subject' => self::$subject_mail,
                 'filename' =>  'view-tmp-' . $template[0]->slug . '.htm',
-                'content' => $template[0]->content,
+		'slug' => $template[0]->slug,
+                'content' => $template[0]->content,		
                 'content_html' => $template[0]->content_html
             );
             

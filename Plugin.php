@@ -87,7 +87,7 @@ class Plugin extends PluginBase
 
 class Send
 {
-    public static function template($slug, $to = NULL, $receiver  = NULL, $subject = NULL)
+    public static function template($slug = '', $to = NULL, $receiver  = NULL, $subject = NULL)
     {
 	return Template::use_template($slug, $to, $receiver, $subject);
     }

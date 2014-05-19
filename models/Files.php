@@ -13,7 +13,8 @@ class Files extends Model
         $content .= $dbData['content'] . "\r\n==\r\n";
         $content .= $dbData['content_html'];
 
-        file_put_contents($path, $content);
+        if(!file_put_contents($path, $content))
+	    return FALSE;
         
         return TRUE;
     }
@@ -24,9 +25,11 @@ class Files extends Model
         $path = base_path('plugins/rablab/email/views/email/') . $dbData['filename'];
         $tmp_path = base_path('plugins/rablab/email/views/email/') . 'view-tmp-' . $dbData['slug'] . '.htm';
 	
+	// Remove file
         if(file_exists($path))
             @unlink ($path);
         
+	// Remove temp files
 	if(file_exists($tmp_path))
             @unlink ($tmp_path);
 	
