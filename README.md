@@ -8,10 +8,10 @@ This plugin adds a class to send emails in frontend using customizable emails' t
 2. Register at least one e-mail template. You can use twig variables in your template email according to the html form used.
 3. On your contact page add the code:
 
-
+```php
     // Use the class to call the method "get_template()"
     use RabLab\Email\Models\Template;
-
+    
     // The function name can be on your own
     function onSendMail()
     {
@@ -19,7 +19,7 @@ This plugin adds a class to send emails in frontend using customizable emails' t
         $result = Template::get_template('my-template-test', $post['email'], $post['name']);
         $this['result'] = $result;
     }
-
+```
 
 The get_template () method has 4 parameters that can be passed:
 
