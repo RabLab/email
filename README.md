@@ -21,7 +21,7 @@ This plugin adds a class to send emails in frontend using customizable emails' t
     }
 ```
 
-The template () method has 4 parameters that can be passed:
+The template() method has 4 parameters that can be passed:
 
 ```php
     $slug = 'my-template-test'; //slug to previously registered template in the database. (required)
